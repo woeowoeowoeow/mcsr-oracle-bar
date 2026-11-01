@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcsr-oracle-bar"
+version = "0.1.0"
+description = "Live and pre-match win probabilities for MCSR Ranked matches"
+readme = "README.md"
+requires-python = ">=3.11"
+# Pinned to the versions the frozen models were verified with (tests/test_reproduce.py, to 1e-14).
+dependencies = [
+    "numpy==2.5.1",
+    "pandas==3.0.5",
+    "pyarrow==26.0.0",
+    "scipy==1.18.1",
+    "trueskill==0.4.5",
+    "requests==2.32.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

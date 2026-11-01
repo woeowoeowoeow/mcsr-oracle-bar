@@ -1,0 +1,9 @@
+# Everything pulled from the MCSR Ranked API, and the player state built from it: never committed
+data/
+
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.pytest_cache/
+.superpowers/
